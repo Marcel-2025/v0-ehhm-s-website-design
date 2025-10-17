@@ -28,56 +28,48 @@ export function YouTubePlaylist({ playlistId }: YouTubePlaylistProps) {
             title: "Dawn of Emotions",
             thumbnail: "https://img.youtube.com/vi/DEINE_VIDEO_ID_1/maxresdefault.jpg",
             duration: "2:30",
-            publishedAt: new Date().toISOString(),
           },
           {
             id: "DEINE_VIDEO_ID_2", // Ersetze mit echter ID
             title: "Dopamine Loops",
             thumbnail: "https://img.youtube.com/vi/DEINE_VIDEO_ID_2/maxresdefault.jpg",
             duration: "3:03",
-            publishedAt: new Date().toISOString(),
           },
           {
             id: "DEINE_VIDEO_ID_3", // Ersetze mit echter ID
             title: "Feel the Energy",
             thumbnail: "https://img.youtube.com/vi/DEINE_VIDEO_ID_3/maxresdefault.jpg",
             duration: "2:47",
-            publishedAt: new Date().toISOString(),
           },
           {
             id: "DEINE_VIDEO_ID_4", // Ersetze mit echter ID
             title: "Festival Rising",
             thumbnail: "https://img.youtube.com/vi/DEINE_VIDEO_ID_4/maxresdefault.jpg",
             duration: "2:29",
-            publishedAt: new Date().toISOString(),
           },
           {
             id: "DEINE_VIDEO_ID_5", // Ersetze mit echter ID
             title: "Eternal Echoes",
             thumbnail: "https://img.youtube.com/vi/DEINE_VIDEO_ID_5/maxresdefault.jpg",
             duration: "3:00",
-            publishedAt: new Date().toISOString(),
           },
           {
             id: "DEINE_VIDEO_ID_6", // Ersetze mit echter ID
             title: "Euphoric Rave",
             thumbnail: "https://img.youtube.com/vi/DEINE_VIDEO_ID_6/maxresdefault.jpg",
             duration: "2:56",
-            publishedAt: new Date().toISOString(),
           },
           {
             id: "DEINE_VIDEO_ID_7", // Ersetze mit echter ID
             title: "Echoes of Minimalism",
             thumbnail: "https://img.youtube.com/vi/DEINE_VIDEO_ID_7/maxresdefault.jpg",
             duration: "2:16",
-            publishedAt: new Date().toISOString(),
           },
           {
             id: "DEINE_VIDEO_ID_8", // Ersetze mit echter ID
             title: "Rebel Echoes",
             thumbnail: "https://img.youtube.com/vi/DEINE_VIDEO_ID_8/maxresdefault.jpg",
             duration: "2:45",
-            publishedAt: new Date().toISOString(),
           },
         ]
 
@@ -141,13 +133,7 @@ export function YouTubePlaylist({ playlistId }: YouTubePlaylistProps) {
                     alt={video.title}
                     fill
                     className="object-cover transition-all duration-300 group-hover:brightness-110"
-                    onError={(e) => {
-                      // Fallback zu hqdefault wenn maxresdefault nicht verfügbar ist
-                      const target = e.target as HTMLImageElement
-                      if (!target.src.includes("hqdefault")) {
-                        target.src = `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`
-                      }
-                    }}
+                    unoptimized
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300" />
                   <div className="absolute bottom-2 right-2 bg-black/80 text-white text-xs px-2 py-1 rounded">
